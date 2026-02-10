@@ -10,7 +10,13 @@ const TodoList = () => {
   };
 
   const AddTask = () => {
-    setTodos([...todos, input]);
+    if (input != "") {
+      setTodos([...todos, input]);
+      setInput("");
+    }
+  };
+  const canclebtn = (i) => {
+    setTodos(todos.filter((_, index) => index !== i));
   };
 
   return (
@@ -22,11 +28,18 @@ const TodoList = () => {
         onChange={handleInput}
         placeholder="Enter task"
       />
-      <button onClick={AddTask}>Add</button>
+      <button className="add-btn" onClick={AddTask}>
+        Add
+      </button>
       <div className="ToDODIsplay">
         <ul>
           {todos.map((todo, index) => (
-            <li key={index}>{todo}</li>
+            <li key={index}>
+              {todo}
+              <button className="close-btn" onClick={() => canclebtn(index)}>
+                X
+              </button>
+            </li>
           ))}
         </ul>
       </div>
