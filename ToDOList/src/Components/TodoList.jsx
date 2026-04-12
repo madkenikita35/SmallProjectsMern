@@ -74,7 +74,13 @@ const TodoList = () => {
         onChange={handleInput}
       />
       <button onClick={addTask}>Add Task</button>
-      <div></div>
+      <div>
+        {task.map((task, index) => (
+          <div key={index}>
+            <p>{task}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
