@@ -31,7 +31,7 @@ const TodoList = () => {
       <button className="add-btn" onClick={AddTask}>
         Add
       </button>
-      <div className="ToDODIsplay">
+      <div className="ToDODIsplay ">
         <ul>
           {todos.map((todo, index) => (
             <li key={index}>
