@@ -28,7 +28,7 @@ const TodoList = () => {
         onChange={handleInput}
         placeholder="Enter task"
       />
-      <button className="add-btn" onClick={AddTask}>
+      <button className=" add-btn" onClick={AddTask}>
         Add
       </button>
       <div className=" ToDODIsplay ">
